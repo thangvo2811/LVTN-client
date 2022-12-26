@@ -1,0 +1,57 @@
+.register {
+  @include flex(center, center);
+  margin-top: calc(#{$header-height} * -1);
+  height: 100%;
+  background-image: url("../../assets/images/background/mainbg.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 20px;
+  background-position: center;
+
+  @include tablet {
+    margin-top: -40px;
+  }
+  @include mobile {
+    background-image: none;
+    height: 100%;
+  }
+
+  &__container {
+    @include flex(center, center);
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    flex-direction: column;
+    border: none;
+    width: 50%;
+    padding: 30px 50px;
+    border-radius: 20px;
+    @include tablet {
+      width: 50%;
+    }
+    @include mobile {
+      width: 100%;
+      border: solid 1px black;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+  &__content {
+    margin-top: 20px;
+
+    form {
+      @include flex(center, center);
+      flex-direction: column;
+    }
+  }
+  &__redirect {
+    margin-top: 20px;
+    font-weight: 600;
+    &:hover {
+      color: $main-color;
+    }
+  }
+}

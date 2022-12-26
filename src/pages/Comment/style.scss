@@ -1,0 +1,15 @@
+.form-name {
+  color: black;
+}
+.product-img {
+  display: flex;
+  justify-content: center;
+}
+img {
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: cover;
+}
+Button {
+  border: none;
+}

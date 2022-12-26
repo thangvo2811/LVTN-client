@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "ROBOTO", sans-serif;
+}
+
+html {
+  font-size: 13px;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+ul {
+  list-style-type: none;
+}
+
+@each $num in $numberGrid {
+  .grid-col-#{$num} {
+    grid-template-columns: repeat($num, 1fr);
+  }
+}
+
+@each $num in $numberGrid {
+  @include tablet {
+    .grid-md-col-#{$num} {
+      grid-template-columns: repeat($num, 1fr);
+    }
+  }
+}
+
+@each $num in $numberGrid {
+  @include mobile {
+    .grid-sm-col-#{$num} {
+      grid-template-columns: repeat($num, 1fr);
+    }
+  }
+}
+
+.container {
+  padding: 0 50px;
+  margin: auto;
+
+  @include tablet {
+    padding: 0 20px;
+  }
+
+  @include mobile {
+    padding: 0 10px;
+  }
+}
+
+.main {
+  margin-top: $header-height;
+  margin-bottom: 2rem;
+  min-height: 600px;
+
+  @include tablet {
+    margin-top: calc(#{$header-tablet-height} + 20px);
+  }
+
+  @include mobile {
+    margin-top: calc(#{$header-mobile-height} + 10px);
+  }
+}
+
+.Grid {
+  display: grid;
+}
