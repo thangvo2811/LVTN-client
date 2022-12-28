@@ -143,6 +143,10 @@ const Header = () => {
     return () => window.removeEventListener("scroll");
   }, []);
 
+  const handleCart = () => {
+    message.error("Không Có Sản Phẩm Trong Giỏ Hàng");
+  };
+
   return (
     <div className="header" ref={headerShrink}>
       <div className="container">
@@ -241,15 +245,28 @@ const Header = () => {
                 </div>
                 {newCustomer ? (
                   <>
-                    <Link to={"/cart"}>
-                      <li className="header-top__cart__list__item header-top__cart__list__item__main">
+                    {totalNumber === null ? (
+                      <li
+                        className="header-top__cart__list__item header-top__cart__list__item__main"
+                        onClick={() => handleCart()}
+                      >
                         <i className="bx bx-cart"></i>
                         <span>Giỏ hàng</span>
                         <div className="notification">
                           <span>{totalNumber || 0}</span>
                         </div>
                       </li>
-                    </Link>
+                    ) : (
+                      <Link to={"/cart"}>
+                        <li className="header-top__cart__list__item header-top__cart__list__item__main">
+                          <i className="bx bx-cart"></i>
+                          <span>Giỏ hàng</span>
+                          <div className="notification">
+                            <span>{totalNumber || 0}</span>
+                          </div>
+                        </li>
+                      </Link>
+                    )}
                   </>
                 ) : (
                   <>

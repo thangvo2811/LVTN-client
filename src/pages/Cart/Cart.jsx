@@ -26,6 +26,7 @@ const Cart = () => {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   const callCartItem = useCallback(async () => {
     await axios
       .get(
@@ -78,23 +79,29 @@ const Cart = () => {
     setRefreshState(randomValue);
   };
 
+  const handlePay = () => {
+    message.error("Không Có Sản Phẩm");
+  };
+
   return (
     <Helmet name="Giỏ hàng">
       <div className="cart">
         <div className="cart__desc">
           <div className="cart__desc__item">
-            {cartItem?.map((item, index) => {
-              return (
-                <CartItem
-                  cartItem={item}
-                  id={item.id}
-                  key={index}
-                  reload={callCartItem}
-                  idCartItem={item.CartItemProduct.id}
-                  reloadPage={refreshList}
-                ></CartItem>
-              );
-            })}
+            {idCartItem.length === 0
+              ? navigate("/product")
+              : cartItem?.map((item, index) => {
+                  return (
+                    <CartItem
+                      cartItem={item}
+                      id={item.id}
+                      key={index}
+                      reload={callCartItem}
+                      idCartItem={item.CartItemProduct.id}
+                      reloadPage={refreshList}
+                    ></CartItem>
+                  );
+                })}
           </div>
           <div
             className="cart__desc__clear"
@@ -134,13 +141,25 @@ const Cart = () => {
               </div>
             </div>
           </div>
-          <Link to={"/payment"}>
-            <div className="cart__info__btn cart__info__btn__payment">
+          {idCartItem.length === 0 ? (
+            <div
+              className="cart__info__btn cart__info__btn__payment"
+              onClick={() => handlePay()}
+            >
               <Button size="stable" animate3={true}>
                 Tiếp tục thanh toán
               </Button>
             </div>
-          </Link>
+          ) : (
+            <Link to={"/payment"}>
+              <div className="cart__info__btn cart__info__btn__payment">
+                <Button size="stable" animate3={true}>
+                  Tiếp tục thanh toán
+                </Button>
+              </div>
+            </Link>
+          )}
+
           <Link to={"/product"}>
             <div className="cart__info__btn cart__info__btn__cart">
               <Button size="stable" animate3={true}>

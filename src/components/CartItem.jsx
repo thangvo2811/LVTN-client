@@ -34,7 +34,6 @@ const CartItem = (props) => {
   const newCustomer = localStorage.getItem("User");
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const increaseQuantity = () => {
     // setQuantity(quantity + 1);

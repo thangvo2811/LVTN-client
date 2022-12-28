@@ -109,7 +109,7 @@ const Register = () => {
       name: "username",
       type: "text",
       placeholder: "Họ tên",
-      errorMessage: "Họ tên không được trống",
+      errorMessage: "Mời bạn nhập tên",
       label: "Họ tên",
       pattern: null,
       required: true,

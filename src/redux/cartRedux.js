@@ -7,7 +7,7 @@ const cartSlice = createSlice({
     numberCart: 0,
     numberCartByCartId: {},
     carts: [],
-    _products: [],
+    products: [],
     totalPrice: 0,
     totalNumberCart: 0,
   },
