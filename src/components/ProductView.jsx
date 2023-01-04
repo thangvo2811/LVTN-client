@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 import Button from "../components/Button";
 import numberWithCommas from "../utils/numberWithCommas";
-import InputEmoji from "react-input-emoji";
 
 import Rating from "@mui/material/Rating";
 
@@ -12,7 +11,7 @@ import pfUser from "../assets/images/UserProfile/man.png";
 import admin from "../assets/images/UserProfile/admin.png";
 
 import { Link, useParams } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addCart, addNumberCart, addQuantityCart } from "../redux/apiCalls.js";
 
 import axios from "axios";
@@ -52,6 +51,11 @@ const ProductView = (props) => {
   // );
   // const newItemByCartId = newItemFromState[props.id];
   // console.log("asdasdsadasdsadsad", newItemByCartId);
+
+  // const qty = quantityProduct?.map((item, index) => item?.quantity);
+  // console.log("Số Lượng", qty);
+  // const amount = qty[0];
+  // console.log("Số lượng sản phẩm 1", amount);
 
   const statusProduct = [
     {
@@ -101,7 +105,7 @@ const ProductView = (props) => {
 
   const idUser = idUserComment?.map((item, index) => item.cus_id);
   const idComment = idUser[0];
-  console.log("asdasda12313", idComment);
+  // console.log("asdasda12313", idComment);
 
   const callCommentProduct = useCallback(async () => {
     await axios
@@ -176,25 +180,9 @@ const ProductView = (props) => {
 
   const increaseQuantity = () => {
     setQuantity(quantity + 1);
-    // setQuantity(dispatch(addNumberCartIncrease));
-    // addQuantityCart(dispatch, props.product_id, "+");
-    // dispatch(
-    //   addCartByCartIdAction({
-    //     cartId: props.product_id,
-    //     currentAmount: quantity + 1,
-    //   })
-    // );
   };
   const decreaseQuantity = () => {
     setQuantity(quantity < 2 ? 1 : quantity - 1);
-    // setQuantity(dispatch(addNumberCartDecrease));
-    // addQuantityCart(dispatch, props.product_id, "-");
-    // dispatch(
-    //   removeCartByCartIdAction({
-    //     cartId: props.product_id,
-    //     currentAmount: quantity < 2 ? 1 : quantity - 1,
-    //   })
-    // );
   };
 
   const handleAddCart = () => {
@@ -331,7 +319,7 @@ const ProductView = (props) => {
                   {quantityProduct?.map((item, index) => (
                     <>
                       <option
-                        setIdWare={index === 0 ? "Chon Chi Nhanh" : null}
+                        setIdWare={index === 0 ? "Chọn Chi Nhánh" : null}
                         value={item.warehouse_id}
                       >
                         {item.UserwarehouseProduct.name}
@@ -339,13 +327,14 @@ const ProductView = (props) => {
                     </>
                   ))}
                 </select>
-              </div>
-              <div className="product-top__info__content__option__right__select">
-                {quantityOptionProdct?.map((item, index) => (
-                  <div key={index}>
-                    {item.UserwarehouseProduct.name}: {item.quantity} sản phẩm
-                  </div>
-                ))}
+
+                <div className="product-top__info__content__option__right__select">
+                  {quantityProduct?.map((item, index) => (
+                    <div key={index}>
+                      {item.UserwarehouseProduct.name}: {item.quantity} sản phẩm
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
 
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import dd1 from "../assets/images/dropdown-images/729_x_356.jpg";
 import dd2 from "../assets/images/dropdown-images/Artboard-4-copy-8-2.png";
@@ -8,13 +8,12 @@ import dd3 from "../assets/images/dropdown-images/Artboard-7-8.png";
 import dd4 from "../assets/images/dropdown-images/Artboard-7-copy-8.png";
 import dd5 from "../assets/images/dropdown-images/Artboard-8-8-1.png";
 import dd6 from "../assets/images/dropdown-images/Artboard-8-copy-2-8.png";
-import pf from "../assets/images/UserProfile/man.png";
+import pt from "../assets/images/UserProfile/pt.png";
 
 import axios from "axios";
 
 import { Menu, message, Space } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { addNumberCartSuccess } from "../redux/cartRedux";
 
 const Header = () => {
   const newItem = useSelector((state) => state.cart.numberCart);
@@ -153,7 +152,8 @@ const Header = () => {
         <div className="header__toggle">
           <div className="header__toggle__logo">
             <Link to="/">
-              <h1>PT</h1>
+              {/* <h1>PT</h1> */}
+              <img src={pt} alt="" />
             </Link>
           </div>
           <div className="header__toggle__button" onClick={openMenuHandler}>
@@ -167,7 +167,7 @@ const Header = () => {
           <div className="header-top">
             <div className="header-top__logo">
               <Link to="/">
-                <h1>PT</h1>
+                <img src={pt} alt="" />
               </Link>
             </div>
             <div className="header-top__search">

@@ -1,27 +1,18 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import numberWithCommas from "../utils/numberWithCommas";
-import lp from "../assets/images/products/chuot-choi-game-co-day-logitech-g502-hero.jpg";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  addCart,
-  addNumberCart,
-  addQuantityCart,
-  deleteCart,
-} from "../redux/apiCalls";
+import { addQuantityCart } from "../redux/apiCalls";
 import {
   addCartByCartIdAction,
   removeCartByCartIdAction,
-  totalCartNumber,
 } from "../redux/cartRedux";
 import axios from "axios";
 import { message } from "antd";
-import { useNavigate } from "react-router-dom";
 
 const CartItem = (props) => {
   const itemCart = props.cartItem;
-  // const reloadPage = props.reload;
 
   // const newItem = useSelector((state) => state.cart.numberCart);
   const cartItem = useSelector((state) => state.cart);

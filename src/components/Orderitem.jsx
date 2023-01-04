@@ -2,7 +2,7 @@ import React from "react";
 
 import AddComment from "../pages/Comment/AddComment";
 import numberWithCommas from "../utils/numberWithCommas";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import DeleteOrder from "../pages/UserProfile/OrderList/DeleleOrder";
 
 const orderStatus = [

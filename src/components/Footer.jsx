@@ -2,7 +2,6 @@ import React from "react";
 
 import Grid from "./Grid";
 
-// import logo from "../assets/images/prologo1.png";
 import { Link } from "react-router-dom";
 
 const footerAboutLink = [

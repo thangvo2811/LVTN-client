@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import numberWithCommas from "../utils/numberWithCommas";
@@ -12,7 +12,6 @@ const ProductCard = (props) => {
   const product = props.product;
   const navigate = useNavigate();
   const idCus = localStorage.getItem("User");
-  console.log(product.id);
 
   const handleAddListProduct = async () => {
     await axios

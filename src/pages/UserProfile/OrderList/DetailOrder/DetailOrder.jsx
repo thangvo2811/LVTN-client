@@ -36,6 +36,7 @@ const DetailOrder = () => {
             (+84) {detailUser.phonenumber}
           </div>
         </div>
+
         <div className="detail-content">
           {detailOrder?.listOrder.map((item, index) => (
             <>
@@ -64,6 +65,18 @@ const DetailOrder = () => {
                     Tổng : {numberWithCommas(item.Orderitem.TotalPrice)} VNĐ
                   </div>
                 </div>
+              </div>
+              <div className="">
+                Trạng Thái:
+                {detailOrder?.paymentstatus === 2
+                  ? " Đã Thanh Toán"
+                  : " Chưa Thanh Toán"}{" "}
+              </div>
+              <div>
+                Phương Thức Thanh Toán:{" "}
+                {detailOrder?.method_id === 1
+                  ? "Thanh Toán MoMo"
+                  : "Chưa Thanh Toán"}
               </div>
             </>
           ))}

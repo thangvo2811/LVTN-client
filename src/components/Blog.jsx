@@ -2,7 +2,6 @@ import React from "react";
 
 import img1 from "../assets/images/blog/2.png";
 import img2 from "../assets/images/blog/JBL_Quantum400_Lifestyle1.png";
-import Button from "./Button";
 
 const Blog = () => {
   return (
