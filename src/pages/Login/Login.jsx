@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import Button from "../../components/Button";
 import { Link, useNavigate } from "react-router-dom";
 import Helmet from "../../components/Helmet";
 import { loginUser } from "../../redux/apiCalls";
 import { useDispatch } from "react-redux";
-import { auth, google } from "../../assets/firebase/FireBase";
+import { auth } from "../../assets/firebase/FireBase";
 import { signInWithPopup } from "firebase/auth";
 import { message } from "antd";
 const Login = () => {

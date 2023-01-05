@@ -1,14 +1,14 @@
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { initialCartByCartIdAction } from "../../../redux/cartRedux";
+// import { useDispatch } from "react-redux";
+// import { initialCartByCartIdAction } from "../../../redux/cartRedux";
 import numberWithCommas from "../../../utils/numberWithCommas";
 
 const CheckProduct = () => {
   const [cartItem, setCartItem] = useState([]);
 
   const newCustomer = localStorage.getItem("User");
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const callCartItem = useCallback(async () => {
     await axios
       .get(

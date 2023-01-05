@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Helmet from "../../components/Helmet";
 
 import Grid from "../../components/Grid";

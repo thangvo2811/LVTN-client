@@ -104,8 +104,10 @@
       &__title {
         font-weight: 600;
         text-transform: capitalize;
-        margin-bottom: 15px;
+        // margin-bottom: 10px;
         font-size: 1.3rem;
+        // margin-left: 5px;
+        margin: 6px;
       }
 
       &__select {

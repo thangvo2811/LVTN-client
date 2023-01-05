@@ -1,11 +1,11 @@
-import { Input, Radio, Space } from "antd";
-import Link from "antd/lib/typography/Link";
+// import { Input, Radio, Space } from "antd";
+// import Link from "antd/lib/typography/Link";
 import axios from "axios";
 import React, { useCallback, useEffect, useState } from "react";
 import FormInput from "../../../components/FormInput";
 import "./style.scss";
-import { useNavigate } from "react-router-dom";
-import numberWithCommas from "../../../utils/numberWithCommas";
+// import { useNavigate } from "react-router-dom";
+// import numberWithCommas from "../../../utils/numberWithCommas";
 
 const Confirm = (props) => {
   const [name, setName] = useState("");

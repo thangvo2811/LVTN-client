@@ -3,13 +3,13 @@ import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
+// import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
-import { Input } from "antd";
+// import { Input } from "antd";
 import axios from "axios";
 import { message } from "antd";
 import "./style.scss";
-import TextArea from "antd/lib/input/TextArea";
+// import TextArea from "antd/lib/input/TextArea";
 
 const DeleteComment = (props) => {
   const [open, setOpen] = useState(false);

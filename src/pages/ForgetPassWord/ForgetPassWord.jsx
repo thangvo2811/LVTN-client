@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "../../components/Button";
+// import Button from "../../components/Button";
 import Helmet from "../../components/Helmet";
 import "./style.scss";
 import axios from "axios";

@@ -30,9 +30,6 @@ const Register = () => {
 
   const [idUser, setIdUser] = useState({});
 
-  const localUrl = "http://localhost:3000";
-  const currentUrl = localUrl;
-
   // const callAllUser = async (id) => {
   //   await axios
   //     .get(`${process.env.REACT_APP_API_URL}/api/get-by-Id/${id}/`)

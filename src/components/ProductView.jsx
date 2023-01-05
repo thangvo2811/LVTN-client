@@ -12,7 +12,7 @@ import admin from "../assets/images/UserProfile/admin.png";
 
 import { Link, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addCart, addNumberCart, addQuantityCart } from "../redux/apiCalls.js";
+import { addCart } from "../redux/apiCalls.js";
 
 import axios from "axios";
 

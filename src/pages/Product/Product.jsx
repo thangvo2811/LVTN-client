@@ -8,7 +8,7 @@ import ProductCard from "../../components/ProductCard";
 import ProductView from "../../components/ProductView";
 
 import axios from "axios";
-import { Checkbox, Input, message } from "antd";
+// import { Checkbox, Input, message } from "antd";
 
 const Product = (props) => {
   const param = useParams();
