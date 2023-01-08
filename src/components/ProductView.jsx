@@ -32,7 +32,7 @@ const ProductView = (props) => {
   const [reloadPage, setReloadPage] = useState("");
   const [quantityProduct, setQuantityProduct] = useState([]);
 
-  const [quantityOptionProdct, setQuantityOptionProdct] = useState([]);
+  // const [quantityOptionProduct, setQuantityOptionProduct] = useState([]);
 
   const [idUserComment, setIdUserComment] = useState([]);
 
@@ -162,7 +162,7 @@ const ProductView = (props) => {
       .then((res) => {
         setTotalPriceProduct(res.data.price);
         setQuantityProduct(res.data.qa);
-        setQuantityOptionProdct(res.data.qa);
+        // setQuantityOptionProduct(res.data.qa);
       })
       .catch((err) => {
         console.log(err);

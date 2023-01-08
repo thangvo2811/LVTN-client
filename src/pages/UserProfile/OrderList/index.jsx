@@ -3,6 +3,7 @@ import numberWithCommas from "../../../utils/numberWithCommas";
 import axios from "axios";
 import "./style.scss";
 import Orderitem from "../../../components/Orderitem";
+import { SectionTitle } from "../../../components/Section";
 //
 const OrderList = () => {
   const [allOrder, setAllOrder] = useState([]);
@@ -28,6 +29,7 @@ const OrderList = () => {
   }, [callAllOrder, idCus, reloadPage]);
   return (
     <>
+      <SectionTitle>Danh Sách Đơn Hàng</SectionTitle>
       <div className="order">
         <div className="order__desc">
           <div className="order__desc__item">

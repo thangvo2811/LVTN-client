@@ -30,7 +30,7 @@
       }
       img {
         width: 300px;
-        height: 300px;
+        height: 230px;
         object-fit: cover;
 
         @include tablet {
@@ -172,6 +172,13 @@
               }
             }
           }
+        }
+        @include tablet {
+          // padding: 1rem 2rem;
+        }
+        @include mobile {
+          flex-direction: row;
+          gap: 50px;
         }
       }
 

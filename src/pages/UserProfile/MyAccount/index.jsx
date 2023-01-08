@@ -9,31 +9,31 @@ import ChangePhone from "../ChangePhone";
 const MyAccount = () => {
   const [detailUser, setDetailUser] = useState({});
   const newCustomer = localStorage.getItem("User").toString();
-  const [file, setFile] = useState("");
-  const handleUploadImage = async () => {
-    if (file) {
-      const formData = new FormData();
-      formData.append("file", file);
-      await axios
-        .post(
-          `${process.env.REACT_APP_API_URL}/api/create-img-product`,
-          formData,
-          {
-            headers: {
-              "Content-Type": "multipart/form-data",
-            },
-          }
-        )
-        .then((res) => {
-          // setFile(file.secure_url);
-          console.log(res?.data?.res?.url);
-          callUser(res?.data?.res?.url);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  };
+  // const [file, setFile] = useState("");
+  // const handleUploadImage = async () => {
+  //   if (file) {
+  //     const formData = new FormData();
+  //     formData.append("file", file);
+  //     await axios
+  //       .post(
+  //         `${process.env.REACT_APP_API_URL}/api/create-img-product`,
+  //         formData,
+  //         {
+  //           headers: {
+  //             "Content-Type": "multipart/form-data",
+  //           },
+  //         }
+  //       )
+  //       .then((res) => {
+  //         // setFile(file.secure_url);
+  //         console.log(res?.data?.res?.url);
+  //         callUser(res?.data?.res?.url);
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       });
+  //   }
+  // };
   const callUser = useCallback(async () => {
     await axios
       .get(`${process.env.REACT_APP_API_URL}/api/get-by-Id/${newCustomer}`)

@@ -6,6 +6,8 @@ import { useParams } from "react-router-dom";
 const DetailOrder = () => {
   const [detailOrder, setDetailOrder] = useState();
   const [detailUser, setDetailUser] = useState({});
+  const [payment, setPayMent] = useState({});
+
   const param = useParams();
   const callDetailOrder = useCallback(async () => {
     await axios
@@ -18,6 +20,23 @@ const DetailOrder = () => {
         console.log(err);
       });
   }, [param.id]);
+
+  const callPayMentOrder = async () => {
+    await axios
+      .post(`${process.env.REACT_APP_API_URL}/api/get-momo-payment-link/`, {
+        orderId: detailUser.id,
+      })
+      .then((res) => {
+        if (res && res.status === 200) {
+          setPayMent(res?.data?.data.qrCodeUrl);
+          console.log(res?.data?.data.qrCodeUrl);
+          window.location.href = res?.data?.data.qrCodeUrl;
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   useEffect(() => {
     callDetailOrder();
   }, [callDetailOrder]);
@@ -83,27 +102,19 @@ const DetailOrder = () => {
                     </div>
                   </div>
                 </div>
-
                 <div className="detail-item__total">
                   <div className="detail-item__total__total">
                     Tổng : {numberWithCommas(item.Orderitem.TotalPrice)} VNĐ
                   </div>
                 </div>
               </div>
-              {/* <div className="">
-                Trạng Thái:
-                {detailOrder?.paymentstatus === 2
-                  ? " Đã Thanh Toán"
-                  : " Chưa Thanh Toán"}{" "}
-              </div>
-              <div>
-                Phương Thức Thanh Toán:{" "}
-                {detailOrder?.method_id === 1
-                  ? "Thanh Toán MoMo"
-                  : "Chưa Thanh Toán"}
-              </div> */}
             </>
           ))}
+          {detailUser.paymentstatus === 2 ? null : (
+            <div className="payment__card" onClick={callPayMentOrder}>
+              <button className="btn-pay">Thanh Toán</button>
+            </div>
+          )}
         </div>
       </div>
     </>
